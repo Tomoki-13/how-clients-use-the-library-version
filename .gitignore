@@ -1,0 +1,11 @@
+dataset
+node_modules
+.DS_Store
+**/*/.env
+scripts
+package-lock.json
+clientRepos
+package-lock.json
+output
+src/visualization
+datasets

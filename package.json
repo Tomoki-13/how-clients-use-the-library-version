@@ -1,0 +1,27 @@
+{
+  "name": "how-clients-use-the-library-version",
+  "version": "0.0.0",
+  "description": "Track how clients use different versions of your library",
+  "main": "jest.config.js",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "dotenv": "^17.2.0",
+    "fs": "^0.0.1-security",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "recharts": "^2.15.3"
+  },
+  "scripts": {
+    "test": "jest ./src/**/__tests__/"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
+    "ts-jest": "^29.3.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
