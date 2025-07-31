@@ -35,11 +35,11 @@ const GITHUB_TOKEN:string | undefined = process.env.GITHUB_TOKEN;
         const now = new Date();
         const date = output_json.formatDateTime(now);
         let outputDir:string = '';
-        outputDir = path.resolve(process.cwd(), '../../dataset/' + date + '/' + libraryToSearch);
+        outputDir = path.resolve(process.cwd(), '../../dataset/' + libraryToSearch);
         output_json.createOutputDirectory(outputDir);
 
         let outputPath = 'file1';
-        outputPath = output_json.getUniqueOutputPath(outputDir, 'client_list', client_list.length.toString());
+        outputPath = output_json.getUniqueOutputPath(outputDir, 'client_list', client_list.length.toString() + '-' + numberOfRepos);
         // JSONデータをファイルに書き込む
         console.log('outputPath：',outputPath);
         //fs.writeFileSync(outputPath, JSON.stringify(client_list, null, 2));
