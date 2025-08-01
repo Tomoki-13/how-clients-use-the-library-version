@@ -10,7 +10,6 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "recharts": "^2.15.3",
-    "uuid": "^9.0.0"
   },
   "scripts": {
     "test": "jest ./src/**/__tests__/"
@@ -24,5 +23,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
