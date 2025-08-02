@@ -7,7 +7,7 @@ import { Client_Ver } from "../types/VersionCommits";
 // リポジトリを順番にクローン
 //libVersionはファイル名を変更するためだけに使用(client_listでフィルタリング済み)
 export const extractVersion = async (client_list:string[],libName:string):Promise<Client_Ver[]> => {
-    let std_Dir:string = path.resolve(process.cwd(), '../clientRepos/'); 
+    let std_Dir:string = path.resolve(process.cwd(), '../../clientRepos/'); 
     output_json.createOutputDirectory(std_Dir);
     // ライブラリ名のディレクトリを作成
     let cloneDir = path.join(std_Dir, libName);
