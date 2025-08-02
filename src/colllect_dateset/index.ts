@@ -5,10 +5,9 @@ import output_json from "../analyze_version/utils/output_json";
 import { GitHubRepoItem } from './types/GitHubRepoItem';
 import { searchRepositories } from './module/searchRepositories';
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 const GITHUB_TOKEN:string | undefined = process.env.GITHUB_TOKEN;
 
-// 実行例
 (async () => {
     const libraryToSearch = 'next';  //対象ライブラリ名
     const numberOfRepos = 5;  //収集するクライアント数
@@ -42,6 +41,6 @@ const GITHUB_TOKEN:string | undefined = process.env.GITHUB_TOKEN;
         outputPath = output_json.getUniqueOutputPath(outputDir, 'client_list', client_list.length.toString() + '-' + numberOfRepos);
         // JSONデータをファイルに書き込む
         console.log('outputPath：',outputPath);
-        //fs.writeFileSync(outputPath, JSON.stringify(client_list, null, 2));
+        fs.writeFileSync(outputPath, JSON.stringify(client_list, null, 2));
     }
 })();
