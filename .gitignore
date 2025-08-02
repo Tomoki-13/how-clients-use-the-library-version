@@ -1,7 +1,7 @@
 dataset
 node_modules
 .DS_Store
-**/*/.env
+.env
 scripts
 package-lock.json
 clientRepos
