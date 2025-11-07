@@ -1,6 +1,7 @@
 # how-clients-use-the-library-version
+## 説明
+ライブラリ開発者が 自分のライブラリのどのバージョンを各クライアントが利用しているか を把握できるツールです。
 ## 準備
-
 ```bash
 # リポジトリをクローン
 git clone <repository-url>
@@ -26,7 +27,7 @@ ts-node index.ts
 ```
 dataset/libnameのディレクトリの直下にデータセットが出力されます
 
-## 収集したデータセットをもとにライブラリの移行遷移を収集
+## 収集したデータセットをもとにライブラリのバージョン変更履歴を収集
 ### src/analyze_versionディレクトリ内のindex.tsをパスを変えて実行
 ```bash
 # ディレクトリ移動
