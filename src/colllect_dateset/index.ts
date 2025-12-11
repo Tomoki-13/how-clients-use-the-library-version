@@ -20,9 +20,6 @@ const GITHUB_TOKEN:string | undefined = process.env.GITHUB_TOKEN;
     if (repos.length > 0) {
         console.log(`\n'${libraryToSearch}'を含むリポジトリ (${repos.length}件):`);
         for (const [index, repoItem] of repos.entries()) {
-            // console.log(`  リポジトリ名: ${repoItem.repository.full_name}`);
-            // console.log(`  URL: ${repoItem.repository.html_url}`);
-            // console.log(`  package.json Path: ${repoItem.path}`);\
             client_list.push(repoItem.repository.full_name);
         }
     } else {
@@ -38,7 +35,7 @@ const GITHUB_TOKEN:string | undefined = process.env.GITHUB_TOKEN;
         output_json.createOutputDirectory(outputDir);
 
         let outputPath = 'file1';
-        outputPath = output_json.getUniqueOutputPath(outputDir, 'client_list', client_list.length.toString() + '-' + numberOfRepos);
+        outputPath = output_json.getUniqueOutputPath(outputDir, 'client_list-'+ date, client_list.length.toString() + '-' + numberOfRepos);
         // JSONデータをファイルに書き込む
         console.log('outputPath：',outputPath);
         fs.writeFileSync(outputPath, JSON.stringify(client_list, null, 2));

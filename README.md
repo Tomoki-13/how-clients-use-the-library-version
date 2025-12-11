@@ -1,6 +1,9 @@
 # how-clients-use-the-library-version
 ## 説明
 ライブラリ開発者が 自分のライブラリのどのバージョンを各クライアントが利用しているか を把握できるツールです。
+
+-----
+
 ## 準備
 ```bash
 # リポジトリをクローン
@@ -9,8 +12,9 @@ cd how-clients-use-the-library-version
 # 依存関係をインストール
 npm install
 ```
+-----
 
-## データセットの収集
+## データの収集
 ### src/colllect_datesetディレクトリ内のindex.tsを実行
 ```bash
 # .env ファイルを作成
@@ -27,6 +31,8 @@ ts-node index.ts
 ```
 dataset/libnameのディレクトリの直下にデータセットが出力されます
 
+-----
+
 ## 収集したデータセットをもとにライブラリのバージョン変更履歴を収集
 ### src/analyze_versionディレクトリ内のindex.tsをパスを変えて実行
 ```bash
@@ -36,3 +42,31 @@ cd src/analyze_version
 # パスには、dataset/libnameの直下に出力されたデータセットのパスを設定
 ts-node index.ts
 ```
+
+-----
+
+## プロジェクトのディレクトリ構成
+
+```
+src/
+├── analyze_version              // バージョン変更履歴の分析モジュール
+│   ├── __tests__                // テストファイル群
+│   ├── coreModule               // バージョン分析の中核ロジック
+│   ├── gitOperation             // Git操作関連のモジュール (クローン、コミットチェックアウトなど)
+│   ├── index.ts                 // バージョン分析処理のメインエントリポイント
+│   ├── types                    // 型定義ファイル
+│   └── utils                    // 共通ユーティリティ関数
+└── colllect_dateset             // クライアントリポジトリのデータ収集モジュール
+    ├── index.ts                 // データ収集処理のメインエントリポイント
+    ├── module                   // 収集ロジック
+    └── types                    // 型定義ファイル
+```
+
+-----
+
+## 技術スタック
+
+  * **言語関係**: TypeScript / Node.js
+  * **コア依存関係**: `axios` (HTTP通信), `dotenv` (環境変数)
+  * **テスト**: `jest`, `ts-jest`。
+-----
